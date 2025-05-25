@@ -6,7 +6,8 @@ We specialize in:
 - Icon Design
 - Web Design
 - Book Covers & Brochures
+- more categories to come soon
 
-🔗 Live Site: [https://yourusername.github.io/shon-website](https://yourusername.github.io/shon-website)
+🔗 Live Site: [https://jaguar968.github.io/shon-website](https://jaguar96.github.io/shon-website)
 
 > We believe in creative clarity — every design tells a beautiful story.
