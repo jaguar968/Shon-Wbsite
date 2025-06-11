@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo"><img src="assets/ShoniconArtboard 1.svg" alt="Shön Logo" width="180px" />
+    <div class="logo"><img src="assets/goldlogg2Artboard 1.png" alt="Shön Logo" width="180px" />
 </div>
    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav id="navMenu">
@@ -28,14 +28,24 @@
       </ul>
     </nav>
   </header>
-
+  <button id="theme-toggle" class="btn">Dark Mode</button>
   <section class="hero">
-    <div class="hero-content">
-      <h1>Think Beautifully with Shön</h1>
-      <p>Your creative partner in logo, web, and print design.</p>
-      <a href="#services" class="btn">Explore Services</a>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Think Beautifully With Shön Design Co</h1>
+      <p>Your creative partner in logo, web and print design</p>
+      <br>
+      <a href="#projects" class="btn">Explore Services</a>
     </div>
-  </section>
+    <div class="hero-video">
+      <video autoplay muted loop>
+        <source src="assets/animation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
 
   <section id="services" class="section">
     <h2>Our Services</h2>
@@ -135,6 +145,17 @@
         }
       });
     });
+    // dark mode toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
+
+  // Load user's preference
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
     //projects
     const logoProjects = [
       {
