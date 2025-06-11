@@ -10,10 +10,19 @@
   <header class="navbar">
     <div class="logo"><img src="assets/ShoniconArtboard 1.svg" alt="Shön Logo" width="180px" />
 </div>
-    <nav>
-      <ul>
+   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="navMenu">
+      <ul class="main-menu">
         <li><a href="#services">Services</a></li>
-        <li><a href="Projects.html">Projects</a></li>
+        <li class="dropdown" id="dropdown">
+          <a href="#" id="projectsToggle">Projects ▾</a>
+          <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="Projects.html">Logos</a></li>
+            <li><a href="#brochures">Brochures</a></li>
+            <li><a href="#web-designs">Web Designs</a></li>
+            <li><a href="#branding">Branding</a></li>
+          </ul>
+        </li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -105,6 +114,28 @@
     <p>&copy; 2025 Shon — Think Beautifully.</p>
   </footer>
   <script>
+    //toggle menu
+     function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const projectsToggle = document.getElementById("projectsToggle");
+      const dropdown = document.getElementById("dropdown");
+
+      projectsToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdown.classList.toggle("open");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!dropdown.contains(e.target) && !projectsToggle.contains(e.target)) {
+          dropdown.classList.remove("open");
+        }
+      });
+    });
+    //projects
     const logoProjects = [
       {
         title: "April McClalen",
