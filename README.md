@@ -8,6 +8,6 @@ We specialize in:
 - Book Covers & Brochures
 - more categories to come soon
 
-🔗 Live Site: [https://jaguar968.github.io/shon-website](https://jaguar968.github.io/Shon-Wbsite/))
+🔗 Live Site: https://jaguar968.github.io/Shon-Wbsite
 
 > We believe in creative clarity — every design tells a beautiful story.
