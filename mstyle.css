@@ -254,49 +254,8 @@ body.dark-mode {
     margin-bottom: 1.5rem;
     line-height: 1.8;
   }
-   .portfolio-section {
-      margin-top: 3rem;
-    }
-    .scroll-hint {
-      text-align: center;
-      font-size: 0.9rem;
-      color: gray;
-      margin-bottom: 0.5rem;
-    }
-    .scroll-hint-popup {
-      position: fixed;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #000;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      z-index: 1000;
-      animation: fadeout 4s forwards;
-    }
-    @keyframes fadeout {
-      0% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
-    .portfolio-grid-wrapper {
-      overflow-x: auto;
-      direction: rtl;
-    }
-    .portfolio-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
-      min-width: max-content;
-    }
-    .portfolio-row {
-      display: flex;
-      gap: 1rem;
-      direction: ltr;
-    }
+   
+    
     .card {
       background: var(--card-bg, #fff);
       padding: 0.5rem;
@@ -336,28 +295,53 @@ body.dark-mode {
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  .card {
-    background: var(--card-bg);
-    border: 1px solid #D4C2A5;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    padding: 1rem;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  .card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-  }
-  .card-title {
-    font-weight: bold;
-    color: #556B2F;
-    text-align: center;
-  }   
+  .scroll-hint-projects {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-color, #333);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .portfolio-scroll-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 1rem;
+    }
+    .portfolio-scroll-inner {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      width: max-content;
+    }
+    .card {
+      width: 120px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-title {
+      font-size: 0.85rem;
+      padding: 0.5rem;
+      color: #333;
+    }
   .marker{
     text-align: center;
   } 
