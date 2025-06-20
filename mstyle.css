@@ -59,8 +59,11 @@ body.dark-mode {
     }
 
     .logo img {
-      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
+
 
     .menu-toggle {
       display: none;
