@@ -8,7 +8,7 @@
   --bg-color: #ffffff;
   --text-color: #333333;
   --card-bg: #fafafa;
-  --link-color: #514eee;
+  --link-color: #0074ff;
 }
 
 body {
@@ -30,7 +30,7 @@ body.dark-mode {
   --bg-color: #333333;
   --text-color: #f0f0f0;
   --card-bg: #1e1e1e;
-  --link-color: #4fa9f3;
+  --link-color: #0074ff;
 }
 
 #theme-toggle {
@@ -59,7 +59,7 @@ body.dark-mode {
     }
 
     .logo img {
-      max-width: 100%;
+      max-width: 80%;
       height: auto;
       display: block;
     }
