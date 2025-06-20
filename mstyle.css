@@ -59,7 +59,7 @@ body.dark-mode {
     }
 
     .logo img {
-      max-width: 60%;
+      max-width: 80%;
       height: auto;
       display: block;
     }
@@ -508,7 +508,7 @@ body.dark-mode {
   display: none;
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
+  color: #2a57ec;
   margin-top: 1rem;
   animation: fadeHint 1.5s infinite alternate;
 }
