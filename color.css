@@ -1,0 +1,381 @@
+/* Reset + base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #003135;
+  --card-bg: #AFDDE5;
+  --link-color: #0FA4AF;
+  --primary-accent: #964734;
+  --secondary-accent: #024950;
+  --hover-accent: #722f23;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link-color);
+}
+
+.service-card {
+  background: var(--card-bg);
+}
+
+body.dark-mode {
+  --bg-color: #333333;
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e;
+  --link-color: #4fa9f3;
+}
+
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--link-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-width: 180px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--link-color);
+  cursor: pointer;
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+.main-menu .dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  width: 200px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--link-color);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #e0f4f6;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem 2rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .main-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-menu li {
+    width: 100%;
+    text-align: right;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: #f9f9f9;
+    padding-left: 1rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-video,
+  .hero-text {
+    width: 100%;
+  }
+}
+
+.hero {
+  padding: 4rem 2rem;
+  background: var(--bg-color);
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-video {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  background: var(--primary-accent);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--secondary-accent);
+}
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.service-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.testimonial {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f5f5f5;
+  font-size: 0.9rem;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid #D4C2A5;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-weight: bold;
+  color: var(--secondary-accent);
+  text-align: center;
+}
+
+.marker {
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  display: block;
+}
+
+.grid-item .content {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.grid-item .content h3 {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}

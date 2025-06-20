@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Shön Design</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, textarea, select {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    input[type="file"] {
+      padding: 0.5rem 0;
+    }
+
+    button {
+      padding: 0.75rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Shön Design</h1>
+    <form action="https://formsubmit.co/archersterling753@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://jaguar968.github.io/Shon-Wbsite/ThankYouPage.html">
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="contact">Phone/WhatsApp Number:</label>
+      <input type="text" id="contact" name="contact" required />
+
+      <label for="what">What do you need?</label>
+      <input type="text" id="what" name="what" placeholder="e.g. Logo Design, Brand Kit, etc." required />
+
+      <label for="brief">Design Brief:</label>
+      <textarea id="brief" name="brief" placeholder="Describe what you want in detail..." required></textarea>
+
+      <label for="file">Attach a file (optional):</label>
+      <input type="file" id="file" name="attachment" accept=".pdf,.png,.jpg,.jpeg,.webp" />
+
+      <label for="taggedDesign">Tag a design you liked (optional):</label>
+      <input type="text" id="taggedDesign" name="taggedDesign" placeholder="Paste title or reference here..." />
+
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+</body>
+</html>

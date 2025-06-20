@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shön — Think Beautifully</title>
+  <link rel="stylesheet" href="mstyle.css" />
+  <style>
+   
+  </style>
+</head>
+<body>
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="service-scroll-container">
+      <div class="service-grid">
+        <div class="service-card-clean">
+          <img src="assets/boardArtboard 1CONS1.webp" alt="Logo Design Sample" />
+          <h3>Logo Design</h3>
+          <p>Professional brand marks and identity systems tailored to your business.</p>
+          <span class="btn-outline" onclick="openModal('logo')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/BROCHURE.png" alt="Brochure Design Sample" />
+          <h3>Brochure Design</h3>
+          <p>Elegant single, bi-fold, and multi-page brochures that convert readers.</p>
+          <span class="btn-outline" onclick="openModal('brochure')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/LandinPage.jpeg" alt="Landing Page Sample" />
+          <h3>Landing Page Design</h3>
+          <p>Conversion-focused landing pages designed to guide your users clearly.</p>
+          <span class="btn-outline" onclick="openModal('landing')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/UI.jpg" alt="UI/UX Design Sample" />
+          <h3>UI/UX Design</h3>
+          <p>Intuitive and responsive interfaces that elevate your software experience.</p>
+          <span class="btn-outline" onclick="openModal('uiux')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/software.jpg" alt="Software UI Sample" />
+          <h3>Software UI Design</h3>
+          <p>COMING SOON: Sleek interfaces for POS and custom business tools.</p>
+          <span class="btn-outline" style="opacity: 0.6; cursor: default;">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="pricingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
+
+  <script>
+    const pricingData = {
+      logo: `
+        <h3>Logo Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$50</strong> – 2 design concepts, 2-day delivery, no revisions</li>
+          <li><strong>$100</strong> – 4 designs, 4-day delivery, 1 revision</li>
+          <li><strong>$200</strong> – 5 designs, 4-day delivery, 3 revisions</li>
+          <li><strong>$300</strong> – 7 designs, 5-day delivery, unlimited revisions</li>
+        </ul>`,
+      brochure: `
+        <h3>Brochure Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$50</strong> – Single page, 3-day delivery</li>
+          <li><strong>$100</strong> – Bi-fold, 2-day delivery</li>
+          <li><strong>$200</strong> – Tri-fold, 2-day delivery, includes print files</li>
+          <li><strong>$300</strong> – Multi-page, priority delivery</li>
+        </ul>`,
+      landing: `
+        <h3>Landing Page Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$100</strong> – Basic layout, 3-day delivery</li>
+          <li><strong>$200</strong> – Interactive layout, 3-day delivery</li>
+          <li><strong>$300</strong> – Full branded experience, 5-day delivery</li>
+        </ul>`,
+      uiux: `
+        <h3>UI/UX Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$100</strong> – 3 wireframes, no revisions</li>
+          <li><strong>$200</strong> – 5 wireframes, 2 revisions</li>
+          <li><strong>$300</strong> – Complete UI Kit, unlimited revisions</li>
+        </ul>`
+    };
+
+    function openModal(service) {
+      document.getElementById('modalText').innerHTML = pricingData[service];
+      document.getElementById('pricingModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('pricingModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('pricingModal');
+      if (event.target == modal) closeModal();
+    }
+  </script>
+</body>
+</html>

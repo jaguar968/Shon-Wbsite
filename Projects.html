@@ -3,272 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="mstyle.css" />
   <title>Shön Projects</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-    .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Responsive nav */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: right;
-    padding: 1rem;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-
   
-  header.navbar {
-    background: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .navbar .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .navbar ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-  
-  .navbar ul li a {
-    color: #333;
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-    .project {
-    background-color: #fff ;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .images {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 1rem;
-    }
-
-    .big-img {
-      width: 50%;
-      height: auto;
-      border-radius: 8px;
-      border: solid 0px;
-    }
-
-    .mockups {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      gap: 2rem;
-    }
-
-    .mockups img {
-      width: 90%;
-      height: auto;
-      border-radius: 8px;
-      border: solid 0px;
-    }
-
-    .description {
-      margin-top: 1rem;
-      line-height: 1.6;
-    }
-  </style>
 </head>
-<body>
-   <header class="navbar">
-    <div class="logo"><img src="assets/goldlogg2Artboard 1.png" alt="Shön Logo" width="100px" />
+  <header class="navbar">
+    <div class="logo"><img src="assets/shonlogo2Artboard 1.png" alt="Shön Logo" />
 </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="navMenu">
+      <ul class="main-menu">
+        <li><a href="#services">Services</a></li>
+        <li class="dropdown" id="dropdown">
+          <a href="#" id="projectsToggle">Projects ▾</a>
+          <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="Projects.html">Logos</a></li>
+            <li><a href="ComingSoon.html">Brochures</a></li>
+            <li><a href="ComingSoon.html">Web Designs</a></li>
+            <li><a href="ComingSoon.html">Branding</a></li>
+            <li><a href="ComingSoon.html">Software</a></li>
+          </ul>
+        </li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="meet-the-team.html">Team</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1>Shön Design Projects Logo Projects</h1>
-  <div id="project-container"></div>
+  <h1>Shön Design Projects</h1>
+  <div class="grid-container" id="project-grid"></div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Large View">
+  </div>
+   <button id="theme-toggle" class="btn">Dark Mode</button>
 
   <script>
-    // Project data array
     const projects = [
-      {
-        title: "Strongman Gym ",
-        bigImage: "assets/GymL2Artboard 1.svg",
-        mockup1: "assets/stmArtboard 1.webp",
-        mockup2: "assets/STMerchArtboard 1.webp",
-        description: "A minimalist logo created for a modern Gym, emphasizing clean lines and versatility across digital and print platforms."
-      },
-      {
-        title: "Universal Gym",
-        bigImage: "assets/GymL4Artboard 1.svg",
-        mockup1: "assets/UGArtboard 1.webp",
-        mockup2: "assets/UBMerchArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "Gym Logo Design",
-        bigImage: "assets/GymL1Artboard 1@2x.webp",
-        mockup1: "assets/BFGArtboard 1.webp",
-        mockup2: "assets/BFArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "River Grille",
-        bigImage: "assets/RG01Artboard 1.webp",
-        mockup1: "assets/RG1Artboard 1.webp",
-        mockup2: "assets/RGBRArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "April Mclaren",
-        bigImage: "assets/approArtboard 1.webp",
-        mockup1: "assets/April 2mck.webp",
-        mockup2: "assets/ap2Artboard 1.webp",
-        description: ""
-      },
-       {
-        title: "Lassen construction",
-        bigImage: "assets/lassenlogo1Artboard 1.webp",
-        mockup1: "assets/las3Artboard 1.webp",
-        mockup2: "assets/LCTSArtboard 1.webp",
-        description: ""
-      }, 
-      {
-        title: "JM Equipment repair",
-        bigImage: "assets/JM Equipment repairlogArtboard 1.webp",
-        mockup1: "assets/JMArtboard 1.webp",
-        mockup2: "assets/jmtsArtboard 1.webp",
-        description: ""
-      }, 
-      {
-        title: "CAR-Thena",
-        bigImage: "assets/CAR-TArtboard 1.svg",
-        mockup1: "assets/Cartdoc2Artboard 1.webp",
-        mockup2: "assets/CartdocArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "Walsh Capital",
-        bigImage: "assets/Walsh2Artboard 1@3x.webp",
-        mockup1: "assets/WAArtboard 1.webp",
-        mockup2: "assets/WCTSArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "Parramatta Consultancy",
-        bigImage: "assets/PARRAMATTA2Artboard 1@2x.webp",
-        mockup1: "assets/pcArtboard 1.webp",
-        mockup2: "assets/pctsArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "City Grill",
-        bigImage: "assets/CITYGRILLArtboard 1.svg",
-        mockup1: "assets/cg1Artboard 1.webp",
-        mockup2: "assets/cgtsArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "Capstan Software solutions",
-        bigImage: "assets/CAPSTANArtboard 1.webp",
-        mockup1: "assets/CBArtboard 1.webp",
-        mockup2: "assets/CBTSArtboard 1.webp",
-        description: ""
-      },
-      {
-        title: "The Boardroom Africa",
-        bigImage: "assets/boardArtboard 1board2.webp",
-        mockup1: "assets/TBAArtboard 1.webp",
-        mockup2: "assets/TBATSArtboard 1.webp",
-        description: ""
-      }
+      { title: "Broadhead capital Logo", bigImage: "toWEBP/bc1.webp" },
+      { title: "The Boardroom Africa", bigImage: "toWEBP/BF1.webp" },
+      { title: "Body fit gym logo", bigImage: "toWEBP/bfg1.webp" },
+      { title: "CloakBit logo", bigImage: "toWEBP/cb1.webp" },
+      { title: "CityEye logo", bigImage: "toWEBP/CE.webp" },
+      { title: "CityEye logo 2", bigImage: "toWEBP/ce2.webp" },
+      { title: "City Grill logo", bigImage: "toWEBP/CG1.webp" },
+      { title: "CGLUXE logo", bigImage: "toWEBP/CGLUXEDESIGN1.webp" },
+      { title: "Costello fitout logo", bigImage: "toWEBP/costello1.webp" },
+      { title: "Terra Trade logo", bigImage: "toWEBP/2gbglass.webp" },
+      { title: "Ace place logo", bigImage: "toWEBP/acegd.webp" },
+      { title: "Aurora consumer finance logo", bigImage: "toWEBP/ACF2.webp" },
+      { title: "American Health logo", bigImage: "toWEBP/AHF1.webp" },
+      { title: "A&L Gutter logo", bigImage: "toWEBP/AL1.webp" },
+      { title: "Advent Mission logo", bigImage: "toWEBP/am1.webp" },
+      { title: "April Mc Logo", bigImage: "toWEBP/AMC1.webp" },
+      { title: "x", bigImage: "toWEBP/BC1.webp" },
+      { title: "Capstan logo", bigImage: "toWEBP/CP1.webp" },
+      { title: "Camelot logo", bigImage: "toWEBP/cs.webp" },
+      { title: "Cart-Thena logo", bigImage: "toWEBP/CT1.webp" },
+      { title: "Diamond Equipment logo", bigImage: "toWEBP/D1.webp" },
+      { title: "Dream Homes logo", bigImage: "toWEBP/dh1.webp" },
+      { title: "ELWA logo", bigImage: "toWEBP/Elwa1.webp" },
+      { title: "Fragrances.io logo", bigImage: "toWEBP/FI1.webp" },
+      { title: "Frank & CO logo", bigImage: "toWEBP/FS1.webp" },
+      { title: "The Voodoo Rabbit logo", bigImage: "toWEBP/glassvrw.webp" },
+      { title: "Centurions logo", bigImage: "toWEBP/goldcent.webp" },
+      { title: "Gadgex logo", bigImage: "toWEBP/gx1.webp" },
+      { title: "Rustic Jack Logo", bigImage: "toWEBP/hvaclog1.webp" },
+      { title: "Iron Hand Capital Logo", bigImage: "toWEBP/IH1.webp" },
+      { title: "Intelligent Living Logo", bigImage: "toWEBP/intelligent living.webp" },
+      { title: "Jm Equipment Logo", bigImage: "toWEBP/JM!.webp" },
+      { title: "KC Electrical Logo", bigImage: "toWEBP/Kc1.webp" },
+      { title: "Legacy Dance logo  ", bigImage: "toWEBP/ldc1.webp" },
+       { title: "Leonard O'Neil Logo", bigImage: "toWEBP/leonardO.webp" },
+      { title: "Lpm Logo", bigImage: "toWEBP/LPM1.webp" },
+      { title: "Luminacri Jewerly Logo", bigImage: "toWEBP/luminacri.webp" },
+      { title: "Mainspring Logo", bigImage: "toWEBP/mainspring.webp" },
+      { title: "McGrath Landworks Logo", bigImage: "toWEBP/mcg.webp" },
+      { title: "MFS Logo", bigImage: "toWEBP/mfs1.webp" },
+      { title: "Mako Metal works Logo", bigImage: "toWEBP/mmw1.webp" },
+      { title: "Parramatta conveyancing Logo", bigImage: "toWEBP/PC2.webp" },
+      { title: "Parramatta conveyancing Logo", bigImage: "toWEBP/pmc1.webp" },
+      { title: "Pinnacle Pool Logo", bigImage: "toWEBP/PPB1.webp" },
+      { title: "Ralle Time Logo", bigImage: "toWEBP/ralletime.webp" },
+      { title: "RiverGrille Logo", bigImage: "toWEBP/Rg1red.webp" },
+      { title: "RiverGrille Logo", bigImage: "toWEBP/rg2gold.webp" },
+      { title: "Sun Elavaite Logo", bigImage: "toWEBP/sun elavaite1.webp" },
+      { title: "The Voodoo Rabbit Logo", bigImage: "toWEBP/vr complete.webp" },
+      { title: "Venous Ventures Logo", bigImage: "toWEBP/VV1.webp" },
+      { title: "Walsh Capital Logo", bigImage: "toWEBP/WC1.webp" },
+      { title: "Walsh Capital Logo", bigImage: "toWEBP/WC2.webp" },
+      { title: "Walsh Capital Logo", bigImage: "toWEBP/WC3.webp" },
+      { title: "Walsh Capital Logo", bigImage: "toWEBP/WC4.webp" },
+       { title: "Wake Force Logo", bigImage: "toWEBP/wf1.webp" },
+      { title: "Wake Force Logo", bigImage: "toWEBP/wf2.webp" },
+      { title: "Wake Force Logo", bigImage: "toWEBP/WF3.webp" },
+      { title: "Wake Force Logo", bigImage: "toWEBP/wf16.webp" },
+      { title: "Wake Force Logo", bigImage: "toWEBP/wf36.webp" },
+      { title: "Wake Force Logo", bigImage: "toWEBP/wf46.webp" },
+      { title: "Yaakov Zimmerman Logo", bigImage: "toWEBP/yzmckpap.webp" }
     ];
 
-    const container = document.getElementById('project-container');
+    const container = document.getElementById('project-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
     projects.forEach(project => {
-      const section = document.createElement('section');
-      section.className = 'project';
+      const item = document.createElement('div');
+      item.className = 'grid-item';
 
-      section.innerHTML = `
-        <h2>${project.title}</h2>
-        <div class="images">
-          <img src="${project.bigImage}" alt="${project.title} main" class="big-img">
-          <div class="mockups">
-            <img src="${project.mockup1}" alt="${project.title} mockup 1">
-            <img src="${project.mockup2}" alt="${project.title} mockup 2">
-          </div>
+      item.innerHTML = `
+        <img src="${project.bigImage}" alt="${project.title}">
+        <div class="content">
+          <h3>${project.title}</h3>
         </div>
-        <p class="description">${project.description}</p>
       `;
 
-      container.appendChild(section);
-    });
-  </script>
+      item.addEventListener('click', () => {
+        lightboxImg.src = project.bigImage;
+        lightbox.style.display = 'flex';
+      });
 
+      container.appendChild(item);
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+     //toggle menu
+     function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const projectsToggle = document.getElementById("projectsToggle");
+      const dropdown = document.getElementById("dropdown");
+
+      projectsToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdown.classList.toggle("open");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!dropdown.contains(e.target) && !projectsToggle.contains(e.target)) {
+          dropdown.classList.remove("open");
+        }
+      });
+    });
+    // dark mode toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
+
+  // Load user's preference
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+  </script>
 </body>
 </html>

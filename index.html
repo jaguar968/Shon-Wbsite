@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo"><img src="assets/goldlogg2Artboard 1.png" alt="Shön Logo" width="100px" />
+    <div class="logo"><img src="assets/shonlogo2Artboard 1.png" alt="Shön Logo" />
 </div>
    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav id="navMenu">
@@ -18,13 +18,15 @@
           <a href="#" id="projectsToggle">Projects ▾</a>
           <ul class="dropdown-menu" id="dropdownMenu">
             <li><a href="Projects.html">Logos</a></li>
-            <li><a href="#brochures">Brochures</a></li>
-            <li><a href="#web-designs">Web Designs</a></li>
-            <li><a href="#branding">Branding</a></li>
+            <li><a href="ComingSoon.html">Brochures</a></li>
+            <li><a href="ComingSoon.html">Web Designs</a></li>
+            <li><a href="ComingSoon.html">Branding</a></li>
+            <li><a href="ComingSoon.html">Software</a></li>
           </ul>
         </li>
         <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="Contacts.html">Contact</a></li>
+        <li><a href="meet-the-team.html">Team</a></li>
       </ul>
     </nav>
   </header>
@@ -34,11 +36,11 @@
       <h1>Think Beautifully With Shön Design Co</h1>
       <p>Your creative partner in logo, web and print design</p>
       <br>
-      <a href="#projects" class="btn">Explore Services</a>
+      <a href="Contacts.html" class="btn">Place Order</a>
     </div>
     <div class="hero-video">
       <div class="video-container">
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop>
           <source src="assets/animation.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -48,31 +50,53 @@
 </section>
 
 
-  <section id="services" class="section">
+    <section id="services" class="section">
     <h2>Our Services</h2>
-    <div class="service-list">
-      <div class="service-card">
-        <h3>Logo Design</h3>
-        <p>From $50 – $300<br>Turnaround: 2–5 days</p>
-      </div>
-      <div class="service-card">
-        <h3>Icon Design</h3>
-        <p>From $30 – $100<br>Turnaround: 1–3 days</p>
-      </div>
-      <div class="service-card">
-        <h3>Book Cover Design</h3>
-        <p>From $60 – $250<br>Turnaround: 3–7 days</p>
-      </div>
-      <div class="service-card">
-        <h3>Brochure Design</h3>
-        <p>From $40 – $200<br>Turnaround: 3–5 days</p>
-      </div>
-      <div class="service-card">
-        <h3>Web Design</h3>
-        <p>From $100 – $300<br>Turnaround: 5–10 days</p>
+    <div class="scroll-hint">
+      <span>Swipe to see more →</span>
+    </div>
+    <div class="service-scroll-container">
+      <div class="service-grid">
+        <div class="service-card-clean">
+          <img src="assets/boardArtboard 1CONS1.webp" alt="Logo Design Sample" />
+          <h3>Logo Design</h3>
+          <p>Professional brand marks and identity systems tailored to your business.</p>
+          <span class="btn-outline" onclick="openModal('logo')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/BROCHURE.png" alt="Brochure Design Sample" />
+          <h3>Brochure Design</h3>
+          <p>Elegant single, bi-fold, and multi-page brochures that convert readers.</p>
+          <span class="btn-outline" onclick="openModal('brochure')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/LandinPage.jpeg" alt="Landing Page Sample" />
+          <h3>Landing Page Design</h3>
+          <p>Conversion-focused landing pages designed to guide your users clearly.</p>
+          <span class="btn-outline" onclick="openModal('landing')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/UI.jpg" alt="UI/UX Design Sample" />
+          <h3>UI/UX Design</h3>
+          <p>Intuitive and responsive interfaces that elevate your software experience.</p>
+          <span class="btn-outline" onclick="openModal('uiux')">View Pricing</span>
+        </div>
+        <div class="service-card-clean">
+          <img src="assets/software.jpg" alt="Software UI Sample" />
+          <h3>Software UI Design</h3>
+          <p>COMING SOON: Sleek interfaces for POS and custom business tools.</p>
+          <div class="btn-outline2">Coming Soon</div>
+        </div>
       </div>
     </div>
   </section>
+
+  <div id="pricingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
 
   <section id="projects" class="section">
     <h2>Our Work</h2>
@@ -113,16 +137,76 @@
   </section>
  <button id="theme-toggle" class="btn">Dark Mode</button>
   <section id="contact" class="section contact">
-    <h2>Get in Touch</h2>
-    <p>Email us at: <a href="mailto:archersterling753@gmail.com">archersterling753@gmail.com</a></p>
-    <p>whatsapp us at: <a href="https://wa.me/+254741967730">+254741967730</a></p>
-    <p>Talk to us on X: <a href="https://x.com/@ShonC81498"> Shon Design Co</a></p>
-  </section>
+  <h2>Get in Touch</h2>
+  <div class="contact-icons">
+    <a href="mailto:archersterling753@gmail.com" class="icon" title="Email Us">
+      <img src="assets/icons/email-mail-web-svgrepo-com.svg" alt="Email Icon" />
+    </a>
+    <a href="https://wa.me/254741967730" class="icon" title="WhatsApp Us">
+      <img src="assets/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp Icon" />
+    </a>
+    <a href="https://x.com/@ShonC81498" class="icon" title="Visit our X Profile">
+      <img src="assets/icons/twitter-color-svgrepo-com.svg" alt="X Icon" />
+    </a>
+    <a href="tel:+254741967730" class="icon" title="Call Us">
+      <img src="assets/icons/phone-svgrepo-com.svg" alt="Phone Icon" />
+    </a>
+  </div>
+  <p>call us on +254741967730</p>
+</section>
+
 
   <footer>
     <p>&copy; 2025 Shon — Think Beautifully.</p>
   </footer>
   <script>
+    //servicesOnClick
+    const pricingData = {
+      logo: `
+        <h3>Logo Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$50</strong> – 2 design concepts, 2-day delivery, no revisions</li>
+          <li><strong>$100</strong> – 4 designs, 4-day delivery, 1 revision</li>
+          <li><strong>$200</strong> – 5 designs, 4-day delivery, 3 revisions</li>
+          <li><strong>$300</strong> – 7 designs, 5-day delivery, unlimited revisions</li>
+        </ul>`,
+      brochure: `
+        <h3>Brochure Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$50</strong> – Single page, 3-day delivery</li>
+          <li><strong>$100</strong> – Bi-fold, 2-day delivery</li>
+          <li><strong>$200</strong> – Tri-fold, 2-day delivery, includes print files</li>
+          <li><strong>$300</strong> – Multi-page, priority delivery</li>
+        </ul>`,
+      landing: `
+        <h3>Landing Page Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$100</strong> – Basic layout, 3-day delivery</li>
+          <li><strong>$200</strong> – Interactive layout, 3-day delivery</li>
+          <li><strong>$300</strong> – Full branded experience, 5-day delivery</li>
+        </ul>`,
+      uiux: `
+        <h3>UI/UX Design Pricing</h3>
+        <ul style="text-align:left">
+          <li><strong>$100</strong> – 3 wireframes, no revisions</li>
+          <li><strong>$200</strong> – 5 wireframes, 2 revisions</li>
+          <li><strong>$300</strong> – Complete UI Kit, unlimited revisions</li>
+        </ul>`
+    };
+
+    function openModal(service) {
+      document.getElementById('modalText').innerHTML = pricingData[service];
+      document.getElementById('pricingModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('pricingModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('pricingModal');
+      if (event.target == modal) closeModal();
+    }
     //toggle menu
      function toggleMenu() {
       const nav = document.getElementById("navMenu");
@@ -263,8 +347,8 @@
         link: "Projects.html"
       },
       {
-        title: "StrongMan Gym",
-        images: ["assets/GymL2Artboard 1.svg"],
+        title: "Camelot studios",
+        images: ["assets/camelotpnArtboard 1.webp"],
         link: "Projects.html"
       },
 
