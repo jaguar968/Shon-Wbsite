@@ -98,9 +98,12 @@
     </div>
   </div>
 
-  <section id="projects" class="section">
+  <section id="projects" class="section portfolio-section">
     <h2>Our Work</h2>
-    <div class="grid" id="portfolioGrid"></div>
+    <div class="scroll-hint-popup" id="scrollPopup">Scroll sideways to explore →</div>
+    <div class="portfolio-grid-wrapper">
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
     <p class="marker"><b>More work coming soon</b></p>
   </section>
 
@@ -356,27 +359,44 @@
 
       // Add more projects here
     ];
+     const grid = document.getElementById("portfolioGrid");
 
-    const grid = document.getElementById("portfolioGrid");
+    function groupIntoRows(array, size) {
+      const result = [];
+      for (let i = 0; i < array.length; i += size) {
+        result.push(array.slice(i, i + size));
+      }
+      return result;
+    }
 
-    logoProjects.forEach(project => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.onclick = () => window.location.href = project.link;
+    const isMobile = window.innerWidth < 768;
+    const groupedProjects = isMobile ? groupIntoRows(logoProjects, 6) : [logoProjects];
 
-      project.images.forEach(imgSrc => {
-        const img = document.createElement("img");
-        img.src = imgSrc;
-        img.alt = project.title;
-        card.appendChild(img);
+    groupedProjects.forEach(row => {
+      const rowDiv = document.createElement("div");
+      rowDiv.className = "portfolio-row";
+
+      row.forEach(project => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = () => window.location.href = project.link;
+
+        project.images.forEach(imgSrc => {
+          const img = document.createElement("img");
+          img.src = imgSrc;
+          img.alt = project.title;
+          card.appendChild(img);
+        });
+
+        const title = document.createElement("div");
+        title.className = "card-title";
+        title.textContent = project.title;
+        card.appendChild(title);
+
+        rowDiv.appendChild(card);
       });
 
-      const title = document.createElement("div");
-      title.className = "card-title";
-      title.textContent = project.title;
-      card.appendChild(title);
-
-      grid.appendChild(card);
+      grid.appendChild(rowDiv);
     });
   </script>
 </body>
