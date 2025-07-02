@@ -109,7 +109,7 @@ const webProjects = [
       { title: "A&L Gutter logo", bigImage: "toWEBP/AL1.webp" },
       { title: "Advent Mission logo", bigImage: "toWEBP/am1.webp" },
       { title: "April Mc Logo", bigImage: "toWEBP/AMC1.webp" },
-      { title: "x", bigImage: "toWEBP/BC1.webp" },
+      { title: "x", bigImage: "toWEBP/hb.webp" },
       { title: "Capstan logo", bigImage: "toWEBP/CP1.webp" },
       { title: "Camelot logo", bigImage: "toWEBP/cs.webp" },
       { title: "Cart-Thena logo", bigImage: "toWEBP/CT1.webp" },
