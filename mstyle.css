@@ -8,7 +8,7 @@
   --bg-color: #ffffff;
   --text-color: #333333;
   --card-bg: #fafafa;
-  --link-color: #0074ff;
+  --link-color: #00809D;
 }
 
 body {
@@ -237,13 +237,20 @@ body.dark-mode {
   
   .contact {
     text-align: center;
+    color: #f0f0f0;
+    
   }
+  .cont{
+    background-color: #333;
+  }
+  
   
   footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     background: #f5f5f5;
     font-size: 0.9rem;
+    height: fit-content;
   }
   .about-content {
     max-width: 800px;
@@ -458,7 +465,7 @@ body.dark-mode {
     .service-card-clean .btn-outline {
       background: transparent;
       border: 2px solid var(--primary-accent);
-      color: var(--primary-accent);
+      color:#0074ff;
       padding: 0.5rem 1rem;
       border-radius: 25px;
       font-weight: bold;
@@ -553,3 +560,72 @@ body.dark-mode {
   cursor: default
 
 }
+/* === Website Designs Portfolio Section === */
+.designs-section {
+  padding: 2rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.designs-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+#searchInput {
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 90%;
+  max-width: 400px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.portfolio-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.portfolio-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-4px);
+}
+
+.portfolio-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-desc {
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-color);
+}
+

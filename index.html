@@ -19,7 +19,7 @@
           <ul class="dropdown-menu" id="dropdownMenu">
             <li><a href="Projects.html">Logos</a></li>
             <li><a href="ComingSoon.html">Brochures</a></li>
-            <li><a href="ComingSoon.html">Web Designs</a></li>
+            <li><a href="webdesign.html">Web Designs</a></li>
             <li><a href="ComingSoon.html">Branding</a></li>
             <li><a href="ComingSoon.html">Software</a></li>
           </ul>
@@ -139,242 +139,32 @@
     </div>
   </section>
  <button id="theme-toggle" class="btn">Dark Mode</button>
-  <section id="contact" class="section contact">
-  <h2>Get in Touch</h2>
-  <div class="contact-icons">
-    <a href="mailto:archersterling753@gmail.com" class="icon" title="Email Us">
-      <img src="assets/icons/email-mail-web-svgrepo-com.svg" alt="Email Icon" />
-    </a>
-    <a href="https://wa.me/254741967730" class="icon" title="WhatsApp Us">
-      <img src="assets/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp Icon" />
-    </a>
-    <a href="https://x.com/@ShonC81498" class="icon" title="Visit our X Profile">
-      <img src="assets/icons/twitter-color-svgrepo-com.svg" alt="X Icon" />
-    </a>
-    <a href="tel:+254741967730" class="icon" title="Call Us">
-      <img src="assets/icons/phone-svgrepo-com.svg" alt="Phone Icon" />
-    </a>
-  </div>
-  <p>call us on +254741967730</p>
-</section>
+ <div class="cont">
+    <section id="contact" class="section contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-icons">
+          <a href="mailto:archersterling753@gmail.com" class="icon" title="Email Us">
+            <img src="assets/icons/email-mail-web-svgrepo-com.svg" alt="Email Icon" />
+          </a>
+          <a href="https://wa.me/254741967730" class="icon" title="WhatsApp Us">
+            <img src="assets/icons/whatsapp-svgrepo-com.svg" alt="WhatsApp Icon" />
+          </a>
+          <a href="https://x.com/@ShonC81498" class="icon" title="Visit our X Profile">
+            <img src="assets/icons/twitter-color-svgrepo-com.svg" alt="X Icon" />
+          </a>
+          <a href="tel:+254741967730" class="icon" title="Call Us">
+            <img src="assets/icons/phone-svgrepo-com.svg" alt="Phone Icon" />
+          </a>
+        </div>
+        <p>call us on +254741967730</p>
+    </section>
+    
+</div>
 
 
   <footer>
     <p>&copy; 2025 Shon — Think Beautifully.</p>
   </footer>
-  <script>
-    //servicesOnClick
-    const pricingData = {
-      logo: `
-        <h3>Logo Design Pricing</h3>
-        <ul style="text-align:left">
-          <li><strong>$50</strong> – 2 design concepts, 2-day delivery, no revisions</li>
-          <li><strong>$100</strong> – 4 designs, 4-day delivery, 1 revision</li>
-          <li><strong>$200</strong> – 5 designs, 4-day delivery, 3 revisions</li>
-          <li><strong>$300</strong> – 7 designs, 5-day delivery, unlimited revisions</li>
-        </ul>`,
-      brochure: `
-        <h3>Brochure Design Pricing</h3>
-        <ul style="text-align:left">
-          <li><strong>$50</strong> – Single page, 3-day delivery</li>
-          <li><strong>$100</strong> – Bi-fold, 2-day delivery</li>
-          <li><strong>$200</strong> – Tri-fold, 2-day delivery, includes print files</li>
-          <li><strong>$300</strong> – Multi-page, priority delivery</li>
-        </ul>`,
-      landing: `
-        <h3>Landing Page Design Pricing</h3>
-        <ul style="text-align:left">
-          <li><strong>$100</strong> – Basic layout, 3-day delivery</li>
-          <li><strong>$200</strong> – Interactive layout, 3-day delivery</li>
-          <li><strong>$300</strong> – Full branded experience, 5-day delivery</li>
-        </ul>`,
-      uiux: `
-        <h3>UI/UX Design Pricing</h3>
-        <ul style="text-align:left">
-          <li><strong>$100</strong> – 3 wireframes, no revisions</li>
-          <li><strong>$200</strong> – 5 wireframes, 2 revisions</li>
-          <li><strong>$300</strong> – Complete UI Kit, unlimited revisions</li>
-        </ul>`
-    };
-
-    function openModal(service) {
-      document.getElementById('modalText').innerHTML = pricingData[service];
-      document.getElementById('pricingModal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('pricingModal').style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('pricingModal');
-      if (event.target == modal) closeModal();
-    }
-    //toggle menu
-     function toggleMenu() {
-      const nav = document.getElementById("navMenu");
-      nav.classList.toggle("active");
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const projectsToggle = document.getElementById("projectsToggle");
-      const dropdown = document.getElementById("dropdown");
-
-      projectsToggle.addEventListener("click", function (e) {
-        e.preventDefault();
-        dropdown.classList.toggle("open");
-      });
-
-      document.addEventListener("click", function (e) {
-        if (!dropdown.contains(e.target) && !projectsToggle.contains(e.target)) {
-          dropdown.classList.remove("open");
-        }
-      });
-    });
-    // dark mode toggle
-    const toggleBtn = document.getElementById('theme-toggle');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-  });
-
-  // Load user's preference
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-    //projects
-    const logoProjects = [
-      {
-        title: "April McClalen",
-        images: ["assets/aprilmcclalen.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Devalle Construction",
-        images: ["assets/boardArtboard 1CONS1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Lassen Construction",
-        images: ["assets/lassenlogo1Artboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "JM Equipment repair",
-        images: ["assets/JM Equipment repairlogArtboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Parramatta Consultancy",
-        images: ["assets/PARRAMATTA2Artboard 1@2x.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "MFS",
-        images: ["assets/MFSlogo1Artboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "River Grille",
-        images: ["assets/RG01Artboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Walsh Capital",
-        images: ["assets/Walsh2Artboard 1@3x.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "City Grill",
-        images: ["assets/CITYGRILLArtboard 1.svg"],
-        link: "Projects.html"
-      },
-      {
-        title: "Capstan Software solutions",
-        images: ["assets/CAPSTANArtboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "The Boardroom Africa",
-        images: ["assets/boardArtboard 1board2.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Edmonton Church",
-        images: ["assets/boardArtboard 11.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Iron Hand",
-        images: ["assets/ironhandArtboard 1@2x.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Advent Mission",
-        images: ["assets/adventArtboard 1@2x.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "River Grille 2",
-        images: ["assets/RIVERGRILLE1Artboard 1@2x.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "River Grille 3",
-        images: ["assets/RIVERGRILLE2Artboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "Parramatta Consultancy 2",
-        images: ["assets/PARRAMATTA3Artboard 1-100.jpg"],
-        link: "Projects.html"
-      },
-      {
-        title: "Venous Ventures",
-        images: ["assets/venousvArtboard 1.webp"],
-        link: "Projects.html"
-      },
-      {
-        title: "CAR-Thena",
-        images: ["assets/CAR-TArtboard 1.svg"],
-        link: "Projects.html"
-      },
-       {
-        title: "Body-Fit Gym",
-        images: ["assets/GymL1Artboard 1.svg"],
-        link: "Projects.html"
-      },
-      {
-        title: "Camelot studios",
-        images: ["assets/camelotpnArtboard 1.webp"],
-        link: "Projects.html"
-      },
-
-      
-
-      // Add more projects here
-    ];
-     const grid = document.getElementById("portfolioGrid");
-
-    logoProjects.forEach(project => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.onclick = () => window.location.href = project.link;
-
-      project.images.forEach(imgSrc => {
-        const img = document.createElement("img");
-        img.src = imgSrc;
-        img.alt = project.title;
-        card.appendChild(img);
-      });
-
-      const title = document.createElement("div");
-      title.className = "card-title";
-      title.textContent = project.title;
-      card.appendChild(title);
-
-      grid.appendChild(card);
-    });
-  </script>
+  <script src="try.js" defer></script>
 </body>
 </html>

@@ -65,20 +65,17 @@
    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav id="navMenu">
       <ul class="main-menu">
-        <li><a href="#services">Services</a></li>
         <li class="dropdown" id="dropdown">
           <a href="#" id="projectsToggle">Projects ▾</a>
           <ul class="dropdown-menu" id="dropdownMenu">
             <li><a href="Projects.html">Logos</a></li>
             <li><a href="ComingSoon.html">Brochures</a></li>
-            <li><a href="ComingSoon.html">Web Designs</a></li>
+            <li><a href="webdesign.html">Web Designs</a></li>
             <li><a href="ComingSoon.html">Branding</a></li>
             <li><a href="ComingSoon.html">Software</a></li>
           </ul>
         </li>
-        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="Contacts.html">Contact</a></li>
-        <li><a href="meet-the-team.html">Team</a></li>
          <li><a href="index.html">Home</a></li>
       </ul>
     </nav>
@@ -120,39 +117,7 @@
   <footer>
     <p>&copy; 2025 Shön Creative Studio. All rights reserved.</p>
   </footer>
-  <script>
-     //toggle menu
-     function toggleMenu() {
-      const nav = document.getElementById("navMenu");
-      nav.classList.toggle("active");
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const projectsToggle = document.getElementById("projectsToggle");
-      const dropdown = document.getElementById("dropdown");
-
-      projectsToggle.addEventListener("click", function (e) {
-        e.preventDefault();
-        dropdown.classList.toggle("open");
-      });
-
-      document.addEventListener("click", function (e) {
-        if (!dropdown.contains(e.target) && !projectsToggle.contains(e.target)) {
-          dropdown.classList.remove("open");
-        }
-      });
-    });
-    // dark mode toggle
-    const toggleBtn = document.getElementById('theme-toggle');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-  });
-
-  // Load user's preference
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
+  <script src="try.js" defer>
   </script>
 </body>
 </html>

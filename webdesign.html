@@ -3,11 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Web Designs</title>
   <link rel="stylesheet" href="mstyle.css" />
-  <title>Shön Projects</title>
-  
+  <style>
+    .lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+  background: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+  </style>
 </head>
-  <header class="navbar">
+<body>
+    <header class="navbar">
     <div class="logo"><img src="assets/shonlogoArtboard 1.png" alt="Shön Logo" />
 </div>
    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -29,15 +58,20 @@
       </ul>
     </nav>
   </header>
+  <section class="designs-section">
+  <h1>Website Designs</h1>
+  <input type="text" id="searchInput" placeholder="Search by category..." />
 
-  <h1>Shön Design Projects</h1>
-  <div class="grid-container" id="project-grid"></div>
-
-  <div class="lightbox" id="lightbox">
+  <div class="portfolio-grid" id="webportfolioGrid">
+    <!-- JS will inject items here -->
+  </div>
+</section>
+<div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="" alt="Large View">
   </div>
-   <button id="theme-toggle" class="btn">Dark Mode</button>
 
-  <script src="try.js" defer></script>
+  <script src="try.js"></script>
+  
+
 </body>
 </html>
