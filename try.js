@@ -15,15 +15,15 @@ const pricingData = {
   logo: `
     <h3>Logo Design Pricing</h3>
     <ul style="text-align:left">
-      <li><strong>$50</strong> – 2 design concepts, 2-day delivery, no revisions</li>
+      <li><strong>$80</strong> – 2 design concepts, 2-day delivery, no revisions</li>
       <li><strong>$100</strong> – 4 designs, 4-day delivery, 1 revision</li>
-      <li><strong>$200</strong> – 5 designs, 4-day delivery, 3 revisions</li>
-      <li><strong>$300</strong> – 7 designs, 5-day delivery, unlimited revisions</li>
+      <li><strong>$200</strong> – 6 designs, 4-day delivery, 3 revisions</li>
+      <li><strong>$300</strong> – 10 designs, 5-day delivery, unlimited revisions</li>
     </ul>`,
   brochure: `
     <h3>Brochure Design Pricing</h3>
     <ul style="text-align:left">
-      <li><strong>$50</strong> – Single page, 3-day delivery</li>
+      <li><strong>$80</strong> – Single page, 3-day delivery</li>
       <li><strong>$100</strong> – Bi-fold, 2-day delivery</li>
       <li><strong>$200</strong> – Tri-fold, 2-day delivery, includes print files</li>
       <li><strong>$300</strong> – Multi-page, priority delivery</li>
@@ -38,9 +38,9 @@ const pricingData = {
   uiux: `
     <h3>UI/UX Design Pricing</h3>
     <ul style="text-align:left">
-      <li><strong>$100</strong> – 3 wireframes, no revisions</li>
-      <li><strong>$200</strong> – 5 wireframes, 2 revisions</li>
-      <li><strong>$300</strong> – Complete UI Kit, unlimited revisions</li>
+      <li><strong>$150</strong> – 3 wireframes, no revisions</li>
+      <li><strong>$250</strong> – 5 wireframes, 2 revisions</li>
+      <li><strong>$350</strong> – Complete UI Kit, unlimited revisions</li>
     </ul>`
 };
 
